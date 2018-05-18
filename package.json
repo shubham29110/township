@@ -1,0 +1,32 @@
+{
+  "name": "tms",
+  "version": "1.0.0",
+  "description": "Township Management System",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Shubham Tiwari",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "*",
+    "body-parser": "*",
+    "connect-flash": "*",
+    "cookie-parser": "^1.4.1",
+    "express": "*",
+    "express-handlebars": "*",
+    "express-messages": "*",
+    "express-session": "*",
+    "express-validator": "*",
+    "mongodb": "*",
+    "mongoose": "*",
+    "node-mailer": "^0.1.1",
+    "passport": "*",
+    "passport-facebook": "^2.1.1",
+    "passport-google-oauth": "^1.0.0",
+    "passport-http": "*",
+    "passport-local": "*",
+    "passport-local-mongoose": "^5.0.0"
+  }
+}

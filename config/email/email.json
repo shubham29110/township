@@ -1,0 +1,22 @@
+{
+    "reset_pass_mail":{
+        "subject":"Building Management Password Reset",
+        "header":"Dear \n\n",
+        "middle":"You are receiving this because you  have requested to reset password for your account.\n\n lease click on the following link or paste this into your browser to complete the process:\n\n",
+       "footer":"If you did not request this, please ignore this email and your password will remain unchanged.\n'"
+    },
+
+    "invitation_mail":{
+        "subject":"invitation mail",
+        "header":"Dear",
+        "middle":"we would invite you to join you our website .\n\n please click on the following link or paste this into your browser to complete the process:\n\n",
+       "footer":"\n'"
+    },
+    "reset_pass_done":{
+        "subject":"Building Management reset password confirmation",
+        "header":"Dear \n\n",
+        "middle":"You are receiving this because you  have changed your password successfully.\n\n ",
+       "footer":"If you did not request this, please ignore this email and your password will remain unchanged.\n'"
+    }
+}
+

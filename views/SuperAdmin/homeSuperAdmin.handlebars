@@ -1,0 +1,86 @@
+<h2 class="page-header">Manager Sahab</h2>
+<script>
+    $(document).ready(function () {
+        $('#adminTable').DataTable();
+    });
+    
+    function reInvitePop(id, name, email){
+        $(document).ready(function(){
+            $('#re-invite').toggle();
+            console.log(name +" "+email)
+            $('#name').val(name);
+             $('#email').val(email);
+             $('#uid').val(id);
+        })
+    }
+</script>
+
+<h3>Invite</h3>
+<form method="POST" action="/superAdmin/invite">
+    <div class="col-md-4">
+        <input type="text" class="form-control" name="name" placeholder="Name" required>
+    </div>
+    <div class="col-md-4">
+        <input type="email" class="form-control" name="email" placeholder="Email" required>
+    </div>
+    <button class="btn btn-warning" type="submit">Send</button>
+</form>
+<br>
+<div>
+    <table id='adminTable'>
+        <thead>
+            <tr>
+                <th>Serial No.</th>
+                <th>Name</th>
+                <th>Role</th>
+                <th>Status</th>
+                <th>Email Id</th>
+                <th> Status</th>
+                <th> </th>
+                <th> </th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {{#each userList}}s
+            <tr id ="{{_id}}">
+                <td>{{serial @index}}</td>
+                <td id ="{{_id}}name">{{name}}</td>
+                <td>{{role}}</td>
+                <td>{{status}}</td>
+                <td id ='{{_id}}email'>{{email}}</td>
+                <td>
+                    <label class="switch">
+                        <input id = 'status' type="checkbox"  {{setCheck status}}>
+                        <span class="slider round" onclick="toggleStatus('{{_id}}','{{status}}')"></span>
+                    </label>
+                </td>
+                <th>
+                    <button class="btn btn-fatal" onclick="reInvitePop('{{_id}}','{{name}}','{{email}}')" {{disableReinviteButton status}}>Re-invite</button>
+                </th>
+                <th>
+                    <button class="btn btn-warning" onclick="deleteUser('{{_id}}')">Delete</a>
+                </th>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    <div id='re-invite' style='display:none;width:300px; height:250px; position:absolute; background-color:rgb(236, 245, 245); padding:20px; top:35%; left:35%;'>
+    <h5>Send Re-invitation</h5>
+    <input type="text" id='name' class="form-control" name="name" placeholder="name" required>
+    <br>
+    <input type="email" id='email' class="form-control" name="email" placeholder="email" required>
+    <br>
+    <input type="hidden" id='uid' name ='id'>
+    <button class="btn btn-info" onclick="reInvitation()">Send</button>
+    <button class="btn btn-warning" onclick="closeDiv()">Close</button>
+</div>
+</div>
+
+<script>
+    function closeDiv(){
+        $(document).ready(function(){
+        $('#re-invite').css('display', 'none');
+    })
+    }
+</script>

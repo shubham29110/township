@@ -1,0 +1,31 @@
+<div class="row">
+	<div class="col-md-12">
+{{#if changePassword}}
+			 <form action="/userSetting/changePassword" method="POST">
+			{{else}}
+
+		<form action="/userSetting/reset/{{token}}" method="POST">
+{{/if}}
+		<div class="alert alert-danger">{{msg}}</div>
+		  <legend>Reset Password</legend>
+			{{#if changePassword}}
+			 <div class="form-group">
+		    <label for="password">Old Password</label>
+		    <input type="password" name="oldpassword" value="" placeholder="Old password" autofocus="autofocus" class="form-control"/>
+		  </div>
+			{{/if}}
+
+		  <div class="form-group">
+		    <label for="password">New Password</label>
+		    <input type="password" name="password" value="" placeholder="New password" autofocus="autofocus" class="form-control"/>
+		  </div>
+		  <div class="form-group">
+		    <label for="confirm">Confirm Password</label>
+		    <input type="password" name="confirm" value="" placeholder="Confirm password" class="form-control"/>
+		  </div>
+		  <div class="form-group">
+		    <button type="submit" class="btn btn-primary">Update Password</button>
+		  </div>
+		</form>
+	</div>
+</div>

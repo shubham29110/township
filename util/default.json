@@ -1,0 +1,7 @@
+{
+    "ticket_status":{
+        "OPEN": "open",
+        "IN_PROGRESS": "in progress",
+        "CLOSED": "closed"
+    }
+}
